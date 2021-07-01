@@ -12,3 +12,9 @@ add start in scripts of package.json
 create models, views, controllers, middlewares, route, public, config folder
 
 create index.js starting point of the app and app.js
+
+
+ejs rules:
+<% normal js %>
+<%- print html  %>
+<%= normal print %>
