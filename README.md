@@ -18,3 +18,6 @@ ejs rules:
 <% normal js %>
 <%- print html  %>
 <%= normal print %>
+
+rs command restart the app
+nodemon just restart when change comes in js
