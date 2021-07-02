@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/dashboard",ensureAuthenticated,(req,res)=>{
-   console.log(req.user);
+//    console.log(req.user); //it has all the info of user
    res.render("dashboard.ejs", {user:req.user} ); 
 });
 
