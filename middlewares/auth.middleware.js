@@ -5,6 +5,7 @@ const ensureAuthenticated=(req,res,next)=>{
     }
     else 
     {
+        req.flash('error',"You do not have access!");
         res.redirect("/users/login");
     }
 }
