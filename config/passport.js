@@ -30,12 +30,12 @@ module.exports = (passport) =>{
             });
         })
     );
-    passport.serializeUser(()=>{
+    passport.serializeUser((user,done)=>{
         done(null, user.id);
-    })
-    passport.deserializeUser(()=>{
+    });
+    passport.deserializeUser((id, done)=>{
         User.findById(id, (err, user)=>{
             done(err,user);
-        })
-    })
+        });
+    });
 };
