@@ -4,6 +4,10 @@ const app = express();
 const session = require('express-session');
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
+const passport = require('passport');
+
+// Passport Strategy
+require('./config/passport')(passport);
 
 // Connect to DB
 mongoose.connect(process.env.MongoURI,{useNewUrlParser:true, useUnifiedTopology:true}).then(()=>{
