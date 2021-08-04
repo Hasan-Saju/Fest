@@ -17,6 +17,6 @@ router.get("/register", ensureAuthenticated, addUserData, getMO);
 router.post("/register", ensureAuthenticated, addUserData, postMO);
 
 router.get("/list", ensureAuthenticated, addUserData, getMOList);
-router.post("/delete/:id", ensureAuthenticated, addUserData, deleteMO);
+router.get("/delete/:id", ensureAuthenticated, addUserData, deleteMO);
 
 module.exports = router;

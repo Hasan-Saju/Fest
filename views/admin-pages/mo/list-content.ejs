@@ -13,7 +13,7 @@
       <div class="x_content">
         <br />
 
-        <% let success="Participant has been registered successfully!" %>
+        <% let success="Data has been deleted successfully!" %>
         <%if(error.length>0){if(error==success){%>
         <div class="alert alert-success"><%=error%></div>
         <%}else{%>
@@ -72,8 +72,7 @@
                     <td>Payment Done</td>
                     <td>Edit</td>
                     <td>
-                      <% const
-                      deleteURL="MathOlympiad/delete/"+participant._id%>
+                      <% const deleteURL="delete/"+participant._id%>
                       <a href="<%= deleteURL %>">
                         <i class="fa fa-trash"></i>
                         <span class="fa fa-chevron"></span>
