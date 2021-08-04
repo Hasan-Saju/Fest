@@ -1,7 +1,7 @@
 const MathOlympiad = require("../models/MathOlympiad.model");
 
 const getMO = (req, res) => {
-  res.render("math-olympiad/register.ejs");
+  res.render("math-olympiad/register.ejs", { error: req.flash("error") });
 };
 
 const postMO = (req, res) => {
@@ -31,7 +31,7 @@ const postMO = (req, res) => {
   MathOlympiad.findOne({ name: name, contact: contact }).then((participant) => {
     if (participant) {
       error = "Participant with this name and contact number already exists!";
-      console.log(error);
+      req.flash("error", error);
       res.redirect("register");
     } else {
       const participant = new MathOlympiad({
@@ -49,12 +49,12 @@ const postMO = (req, res) => {
         .save()
         .then(() => {
           error = "Participant has been registered successfully!";
-          console.log(error);
+          req.flash("error", error);
           res.redirect("register");
         })
         .catch(() => {
           error = "An unexpected error occured while registering participant";
-          console.log(error);
+          req.flash("error", error);
           res.redirect("register");
         });
     }
