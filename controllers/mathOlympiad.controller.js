@@ -125,8 +125,6 @@ const paymentDoneMO = (req, res) => {
     });
 };
 
-//
-
 const selectMO = (req, res) => {
   const id = req.params.id;
 
