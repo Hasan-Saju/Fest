@@ -125,7 +125,9 @@ const paymentDoneMO = (req, res) => {
     });
 };
 
-const selectMO = () => {
+//
+
+const selectMO = (req, res) => {
   const id = req.params.id;
 
   MathOlympiad.findOne({ _id: id })
@@ -150,6 +152,7 @@ const selectMO = () => {
       res.redirect("/MathOlympiad/list");
     });
 };
+
 module.exports = {
   getMO,
   postMO,
