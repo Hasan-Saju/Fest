@@ -84,7 +84,6 @@ const getMOList = (req, res) => {
 const deleteMO = (req, res) => {
   let error = "";
   const id = req.params.id;
-  console.log(req.params.id);
 
   MathOlympiad.deleteOne({ _id: req.params.id })
     .then(() => {
